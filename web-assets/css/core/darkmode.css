@@ -1,262 +1,53 @@
-/* ==========================================================================
-   GLOBAL TRANSITION CORE SYSTEM (Aktivasi Transisi Lembut Seluruh Elemen)
-   ========================================================================== */
-body, 
-.header, 
-.footer, 
-.glass-card,
-p, h1, h2, h3, h4, h5, h6, span {
-    transition: 
-        background 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-        background-color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-        border-color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-        color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-        box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+/*DARKMODE LANDING PAGE */
+.darkmode .hero-overlay{background:linear-gradient( 90deg, rgb(22, 31, 42) 0%, rgb(23, 32, 43) 30%, rgba(23, 32, 43, 0.81) 50%, rgba(23, 32, 43, 0.21) 70%, rgba(255, 255, 255, 0) 90% );transition:opacity .6s ease;}
+.darkmode .tagline{color:#379fff;}
+.darkmode .hero-desc{color:#dedede;}
+.darkmode .hero-wave path{fill:#17202b;transition:all 0.5s;}
+.darkmode .about-section{background:#17202b}
+.darkmode .about-text{color:#dedede}
+.darkmode .education-section{background:#17202b;transition:all 0.5s}
+.darkmode .education-item{background:#222e3d;transition:all 0.5s}
+.darkmode .education-content p{color:#dedede;border-bottom:0px}
+.darkmode .program-highlight-section{background:#222e3d;transition:all 0.5s}
+.darkmode .testimonial-section{background:#222e3d;transition:all 0.5s}
+.darkmode .stat-icon{color:#dedede}
+.darkmode .stat-card{background:#222e3d;transition:all 0.5s}
+.darkmode .stat-card p{color:#dedede}
+.darkmode .slider-fade-left{background:linear-gradient( to right, #222e3d 0%, rgba(0,68,131,0) 100% );transition:all 0.5s}
+.darkmode .slider-fade-right{background:linear-gradient( to left, #222e3d 0%, rgba(0,68,131,0) 100% );transition:all 0.5s}
+.darkmode .cta-section{background:#222e3d; transition:all 0.5s}
+.darkmode .gallery-slider::before {background: linear-gradient( to right, rgb(23, 32, 43) 0%, rgba(23, 32, 43, 0.90) 30%, rgba(23, 32, 43, 0.45) 60%, rgba(23, 32, 43, 0) 100% );transition:all 0.5s}
+.darkmode .gallery-slider::after {background: linear-gradient( to left, rgb(23, 32, 43) 0%, rgb(23, 32, 48, 0.85) 30%, rgb(23, 32, 43, 0.5) 60%, rgba(23, 32, 43, 0) 100% );transition:all 0.5s}
+
+/* DARKMODE RESPONSIVE */
+
+@media (max-width:768px){
+.darkmode .hero-overlay{
+background:linear-gradient( 180deg, rgb(22, 31, 42) 0%, rgb(23, 32, 43, 0.90) 30%, rgba(23, 32, 43, 0.85) 50%, rgba(23, 32, 43, 0.70) 70%,  rgba(23, 32, 43, 0.50) 90%, rgba(255, 255, 255, 0.30) 100% );
+transition:opacity .6s ease, }
+.darkmode .hero-bg{  -webkit-filter: grayscale(100%);  filter: grayscale(100%) brightness(80%);}
 }
 
-/* ==========================================================================
-   PREMIUM DARK MODE DESIGN TOKENS (Obsidian Midnight Blue)
-   ========================================================================== */
-body.dark-mode {
-    /* Primary (Disesuaikan agar lebih menyala di latar gelap) */
-    --color-primary: #818cf8;
-    --color-primary-dark: #6366f1;
-    --color-primary-soft: #a5b4fc;
 
-    /* Secondary */
-    --color-secondary: #6366f1;
-    --color-secondary-dark: #4f46e5;
-    --color-secondary-light: #818cf8;
 
-    /* Accent */
-    --color-accent: #fb923c;
-    --color-accent-soft: rgba(251, 146, 60, 0.18);
-    --color-accent-light: rgba(251, 146, 60, 0.08);
+.darkmode .reaction-pro{background:linear-gradient(180deg,#17202b 0%,#1f2a38 100%);border-color:rgba(255,255,255,0.05);box-shadow:0 8px 24px rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.05) inset}.darkmode .reaction-title{color:#e2e8f0}.darkmode .reaction-item{background:#222e3d}.darkmode .reaction-item:hover{background:#2a3b4d;border-color:rgba(255,255,255,0.15);box-shadow:0 12px 28px rgba(0,0,0,0.4)}.darkmode .reaction-item.active{background:#0066cc;border-color:#0066cc;box-shadow:0 12px 28px rgba(0,102,204,0.3),0 0 0 3px rgba(0,102,204,0.2)}.darkmode .reaction-icon{stroke:#a0aab5}.darkmode .reaction-item:hover .reaction-icon{stroke:#4da6ff}.darkmode .reaction-item:not(.active) .reaction-label{color:#a0aab5}.darkmode .reaction-number{background:rgba(255,255,255,0.08);color:#e2e8f0}.darkmode .reaction-item.popular{background:#2a3b4d;box-shadow:0 12px 30px rgba(0,0,0,0.4),0 0 0 2px rgba(255,255,255,0.1)}.darkmode .reaction-item.top-reaction{border-color:#0066cc;box-shadow:0 10px 26px rgba(0,102,204,0.3)}
 
-    /* Deep Premium Dark Surfaces */
-    --color-bg-light: #030712;     /* Sangat pekat khas aplikasi luxury modern */
-    --color-white: #090f1c;        /* Menggantikan warna putih murni */
-    --color-surface: #090f1c;
-    --color-surface-soft: #111827;
-    --color-surface-muted: #1e293b;
+/* NAVBAR MODERN */
 
-    /* High-Contrast Typography */
-    --color-text: #f8fafc;
-    --color-text-soft: #cbd5e1;
-    --color-text-light: #94a3b8;
+.darkmode .top-wrap-head{background:linear-gradient(135deg,#17202b,#1f2a38);border-bottom-color:rgba(255,255,255,0.05);box-shadow:0 6px 24px rgba(0,0,0,0.3)}.darkmode .top-wrap-head.scrolled{background:rgba(23,32,43,0.9);box-shadow:0 8px 30px rgba(0,0,0,0.4)}.darkmode .submenu{background:rgba(34,46,61,0.95);border-color:rgba(255,255,255,0.1);box-shadow:0 20px 50px rgba(0,0,0,0.5)}.darkmode .submenu li a{color:#dedede}.darkmode .submenu li a:hover{background:linear-gradient(90deg,rgba(0,198,255,0.1),rgba(0,230,255,0.05));color:#00e6ff}.darkmode .nav-menu li a:hover,.darkmode .nav-right i:hover,.darkmode .nav-menu li.active>a{color:#00e6ff}.darkmode .cta-menu-btn{background:linear-gradient(135deg,#00a8d6,#00c6ff);box-shadow:0 8px 24px rgba(0,198,255,0.2)}
 
-    /* Semi-Translucent Tech Borders */
-    --color-border: rgba(99, 102, 241, 0.15); /* Efek sela-sela neon indigo */
-    --color-border-soft: rgba(255, 255, 255, 0.05);
-    --color-overlay: rgba(3, 7, 18, 0.85);
-    --color-transparant:rgba(17, 24, 39, 0.45);
-    --color-transparant-hover:rgba(11, 16, 26, 0.45);
+/* =========================
+   MOBILE NAVBAR
+========================= */
 
-    /* Cinematic Cyber Gradient */
-    --color-gradient: linear-gradient(135deg, #312e81 0%, #4338ca 50%, #6366f1 100%);
 
-    /* Depth Shadows */
-    --shadow-premium: 0 24px 64px -12px rgba(0, 0, 0, 0.7);
-    --shadow-soft: 0 12px 36px rgba(0, 0, 0, 0.4);
-}
+.darkmode .mobile-overlay{background:rgba(0,0,0,0.55);backdrop-filter:blur(8px)}.darkmode .nav-menu{background:linear-gradient(180deg,#17202b,#1f2a38);box-shadow:0 20px 60px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.05)}.darkmode .submenu{background:rgba(255,255,255,0.03)}.darkmode .has-submenu.active>a{background:rgba(255,255,255,0.08);color:#00e6ff}.darkmode .submenu li a{color:rgba(255,255,255,0.7)}.darkmode .submenu li a:hover{color:#fff;background:rgba(255,255,255,0.1)}.darkmode .mobile-toggle span{background:#e2e8f0}
 
-/* ==========================================================================
-   COMPONENT STYLES (DARK MODE ADAPTATION)
-   ========================================================================== */
-body.dark-mode .header {
-    background: var(--color-transparant);
-    backdrop-filter: blur(16px); /* Efek kaca frosted glass premium */
-    border-bottom: 1px solid var(--color-border);
-}
+/* POP UP PESAN WA */
 
-body.dark-mode .mobile-drawer {
-    background: rgba(3, 7, 18, 0.95);
-    backdrop-filter: blur(20px);
-}
+.darkmode .wa-popup-box{background:linear-gradient(145deg,rgba(23,32,43,0.9),rgba(34,46,61,0.8));border:1px solid rgba(255,255,255,0.15);box-shadow:0 25px 60px rgba(0,0,0,0.5);color:#dedede}.darkmode .wa-popup-header h3{color:#e2e8f0}.darkmode .wa-popup-body input,.darkmode .wa-popup-body select,.darkmode #closeWaPopup,.darkmode .wa-popup-body textarea{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:#dedede}.darkmode .wa-popup-body input:focus,.darkmode .wa-popup-body select:focus,.darkmode .wa-popup-body textarea:focus{background:#1f2a38;border-color:#0066cc}.darkmode .wa-popup-box::after{background:linear-gradient(to bottom right,rgba(255,255,255,0.1),transparent)}
 
-body.dark-mode .glass-card {
-    background: var(--color-transparant);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-}
 
-body.dark-mode .nav-link::after {
-    background: rgba(129, 129, 129, 0.021);
-}
+/* SEARCH PREMIUM VISUAL */
 
-body.dark-mode .floating-card {
-    background: var(--color-transparant);
-    border: 1px solid rgba(129, 129, 129, 0.199);
-}
-
-body.dark-mode 
-.message-toggle {
-    background: rgba(30, 41, 59, 0.5);
-    border-color: rgba(255, 255, 255, 0.08);
-}
-
-body.dark-mode .message-toggle:hover {
-    background: rgba(30, 41, 59, 0.8);
-}
-
-body.dark-mode .theme-toggle {
-    background: rgba(30, 41, 59, 0.5);
-    border-color: rgba(255, 255, 255, 0.08);
-}
-
-body.dark-mode .theme-toggle:hover {
-    background: rgba(30, 41, 59, 0.8);
-}
-
-body.dark-mode .contact-modal-card {
-    background: rgba(9, 15, 28, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.6);
-}
-
-body.dark-mode .theme-icon {
-
-    transform:
-        rotate(180deg);
-}
-
-body.dark-mode .contact-modal {
-    background: rgba(3, 7, 18, 0.65);
-}
-
-body.dark-mode 
-.floating-card:hover,
-.back-to-top:hover {
-    background: var(--color-transparant-hover);
-}
-
-body.dark-mode 
-.trust-card,
-.why-card,
-.service-feature,
-.service-card,
-.node-symbol,
-.featured-card-content,
-.back-to-top {
-    background: var(--color-transparant);
-    border: 1px solid rgba(255, 255, 255, 0.089);
-}
-
-body.dark-mode .footer {
-
-    background:
-        radial-gradient(
-            circle at top left,
-            rgba(99,102,241,.20),
-            transparent 35%
-        ),
-
-        radial-gradient(
-            circle at bottom right,
-            rgba(249,115,22,.10),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            135deg,
-            #0f172a,
-            #111827,
-            #1e1b4b
-        );
-}
-body.dark-mode .footer::after{
-
-    background:
-        radial-gradient(
-            circle at 20% 40%,
-            rgba(129,140,248,.45) 0%,
-            rgba(129,140,248,.22) 22%,
-            transparent 60%
-        ),
-
-        radial-gradient(
-            circle at 80% 25%,
-            rgba(99,102,241,.38) 0%,
-            rgba(99,102,241,.18) 22%,
-            transparent 58%
-        ),
-
-        radial-gradient(
-            circle at 70% 80%,
-            rgba(251,146,60,.18) 0%,
-            rgba(251,146,60,.08) 18%,
-            transparent 50%
-        );
-
-    filter: blur(60px);
-
-    opacity:.95;
-
-    animation:
-        auroraFlowDark 5s ease-in-out infinite alternate;
-}
-@keyframes auroraFlowDark {
-
-    0%{
-        transform:
-            translate3d(0,0,0)
-            scale(1);
-    }
-
-    50%{
-        transform:
-            translate3d(4%,-2%,0)
-            scale(1.12);
-    }
-
-    100%{
-        transform:
-            translate3d(-3%,2%,0)
-            scale(1.06);
-    }
-
-}
-
-/* KONDISI INTERAKSI STRUKTURAL (MORPHING ANIMATION) */
-/* Light Mode (Default) */
-body:not(.dark-mode) .sun-icon {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-}
-body:not(.dark-mode) .moon-icon {
-    opacity: 0;
-    transform: rotate(-90deg) scale(0);
-}
-
-/* Dark Mode Active */
-body.dark-mode .sun-icon {
-    opacity: 0;
-    transform: rotate(90deg) scale(0);
-}
-body.dark-mode .moon-icon {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-}
-
-/* ==========================================================================
-   LOGO SMOOTH FADING MECHANISM
-   ========================================================================== */
-.header-logo {
-    position: relative;
-    display: inline-block;
-    height: 32px; /* Sesuaikan dengan tinggi asli logo Anda */
-}
-
-.logo-image {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.5s ease;
-}
-
-/* Aturan Visibilitas Silang Asset */
-body:not(.dark-mode) .logo-dark-asset { opacity: 1; pointer-events: auto; }
-body:not(.dark-mode) .logo-light-asset { opacity: 0; position: absolute; inset: 0; pointer-events: none; }
-
-body.dark-mode .logo-dark-asset { opacity: 0; position: absolute; inset: 0; pointer-events: none; }
-body.dark-mode .logo-light-asset { opacity: 1; pointer-events: auto; }
+.darkmode .search-box{background:#222e3d;box-shadow:0 20px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.1)}.darkmode .search-header{border-bottom-color:rgba(255,255,255,0.1)}.darkmode #liveSearch{color:#e2e8f0}.darkmode #liveSearch::placeholder{color:#64748b}.darkmode .close-search:hover{background:rgba(239,68,68,0.15)}.darkmode .search-item:hover{background:#17202b;border-color:rgba(255,255,255,0.1)}.darkmode .search-title{color:#e2e8f0}.darkmode .search-desc,.darkmode .search-message{color:#a0aab5}.darkmode .search-result::-webkit-scrollbar-thumb{background:#334155}

@@ -1029,7 +1029,6 @@ body {
   height: 70px;
   border-radius: 50%;
   border: 4px solid #004483;
-  margin-top: -70px;
   background: white;
 }
 
@@ -1492,6 +1491,466 @@ body {
   text-align: center;
   color: #64748b;
   font-size: 14px;
+}
+
+/* =========================================
+   REACTION COUNT PREMIUM UPGRADE
+   ========================================= */
+
+.reaction-pro {
+  margin-top: 50px;
+  padding: 38px 24px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fff 0%, #fbfcff 100%);
+  border: 1px solid #eef2f7;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+  text-align: center;
+}
+
+.reaction-title {
+  font-size: 18px;
+  margin-bottom: 28px;
+  font-weight: 700;
+  color: #004483;
+}
+
+.reaction-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* --- Reaction Items Base --- */
+
+.reaction-item {
+  background: #f8faff;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 18px 20px;
+  cursor: pointer;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  transition: transform .35s cubic-bezier(.25, .8, .25, 1), box-shadow .35s, background .3s, border .3s;
+}
+
+.reaction-item:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  opacity: 0;
+  background: radial-gradient(circle at center, rgba(0, 68, 131, 0.18), transparent 65%);
+  transition: opacity .3s;
+}
+
+/* --- Hover & Active States --- */
+
+.reaction-item:hover {
+  transform: translateY(-6px);
+  background: #fff;
+  border-color: #dbe4f0;
+  box-shadow: 0 12px 28px rgba(0, 68, 131, 0.08);
+}
+
+.reaction-item:hover:before {
+  opacity: 1;
+}
+
+.reaction-item.active {
+  background: #004483;
+  border-color: #004483;
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 68, 131, 0.25), 0 0 0 3px rgba(0, 68, 131, 0.15);
+}
+
+/* --- Icons, Labels, & Numbers --- */
+
+.reaction-icon {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: #8ca0b3;
+  transition: transform .35s cubic-bezier(.175, .885, .32, 1.275), stroke .3s, fill .3s;
+}
+
+.reaction-item:hover .reaction-icon {
+  transform: scale(1.18);
+  stroke: #004483;
+}
+
+.reaction-item.active .reaction-icon {
+  transform: scale(1.3) translateY(-2px);
+  stroke: #fff;
+  fill: rgba(255, 255, 255, 0.15);
+}
+
+.reaction-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.reaction-item:not(.active) .reaction-label {
+  color: #5a6c7d;
+}
+
+.reaction-number {
+  font-size: 14px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 3px 12px;
+  border-radius: 20px;
+  transition: all .3s;
+}
+
+.reaction-item.active .reaction-number {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Special Item Modifiers --- */
+
+.reaction-item.popular {
+  box-shadow: 0 12px 30px rgba(0, 68, 131, 0.18), 0 0 0 2px rgba(0, 68, 131, 0.1);
+  background: #fff;
+}
+
+.reaction-item.top-reaction {
+  border-color: #004483;
+  box-shadow: 0 10px 26px rgba(0, 68, 131, 0.25);
+  transform: translateY(-4px);
+}
+
+
+/* =========================================
+   ANIMATIONS & EFFECTS
+   ========================================= */
+
+/* Active Pulse Effect */
+.reaction-item.active::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border-radius: 18px;
+  border: 2px solid rgba(0, 68, 131, 0.3);
+  animation: reactionPulse .8s ease forwards;
+}
+
+@keyframes reactionPulse {
+  0% {
+    transform: scale(.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Floating Reaction Effect */
+.reaction-float {
+  position: absolute;
+  pointer-events: none;
+  animation: floatReaction .9s ease forwards;
+}
+
+@keyframes floatReaction {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  70% {
+    opacity: .9;
+  }
+  100% {
+    transform: translateY(-40px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Confetti Burst Effect */
+.reaction-confetti {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  animation: confettiFall .8s ease forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-35px) rotate(160deg);
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   WHATSAPP PREMIUM POPUP FORM
+   ========================================= */
+
+/* --- Backdrop Overlay --- */
+.wa-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.wa-popup-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* --- Popup Box (Glassmorphism Concept) --- */
+.wa-popup-box {
+  width: 90%;
+  max-width: 420px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25), 0 10px 25px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(40px) scale(0.94);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.wa-popup-overlay.active .wa-popup-box {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Diagonal Light Reflection Effect */
+.wa-popup-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.4), transparent);
+  pointer-events: none;
+}
+
+
+/* =========================================
+   POPUP HEADER & CONTROLS
+   ========================================= */
+
+.wa-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wa-popup-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.2px;
+}
+
+#closeWaPopup {
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0.5;
+  transition: all 0.25s ease;
+}
+
+#closeWaPopup:hover {
+  opacity: 1;
+  transform: rotate(90deg) scale(1.1);
+}
+
+
+/* =========================================
+   FORM FIELDS (INPUTS & TEXTAREA)
+   ========================================= */
+
+.wa-popup-body {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wa-popup-body input,
+.wa-popup-body select,
+.wa-popup-body textarea {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+/* Focus States */
+.wa-popup-body input:focus,
+.wa-popup-body select:focus,
+.wa-popup-body textarea:focus {
+  border-color: #004483;
+  box-shadow: 0 0 0 3px rgba(0, 68, 131, 0.12), 0 5px 15px rgba(0, 68, 131, 0.08);
+  outline: none;
+}
+
+
+/* =========================================
+   PREMIUM SUBMIT BUTTON
+   ========================================= */
+
+#wa_popup_submit {
+  background: linear-gradient(135deg, #004483, #0066cc);
+  color: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+#wa_popup_submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 68, 131, 0.35);
+}
+
+/* Light Sliding Shimmer Effect */
+#wa_popup_submit::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  top: 0;
+  left: -120%;
+  transition: 0.4s;
+}
+
+#wa_popup_submit:hover::before {
+  left: 0;
+}
+
+/* --- Button Icons & WhatsApp Styling --- */
+.wa-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.wa-btn-icon:hover {
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25);
+}
+
+.wa-btn-icon svg {
+  transition: transform 0.2s ease;
+}
+
+.wa-btn-icon:hover svg {
+  transform: scale(1.1);
+}
+
+.wa-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.wa-icon svg {
+  color: #fff;
+}
+
+
+/* =========================================
+   ANIMATIONS SYSTEM
+   ========================================= */
+
+/* Standard Popup Fade In */
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Header Message Icon Pulse Indicator --- */
+.nav-icon.message {
+  position: relative;
+}
+
+/* Notification Badge Dot */
+.nav-icon.message::after {
+  content: "";
+  position: absolute;
+  top: 35%;
+  right: 0;
+  transform: translateY(-12px);
+  width: 8px;
+  height: 8px;
+  background: #ff3b3b;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #004483;
+  animation: notifPulse 1.6s infinite;
+}
+
+/* Pulsing Outer Glow Effect */
+@keyframes notifPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 59, 59, 0.6);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px transparent;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+
+/* =========================================
+   MEDIA QUERIES (MOBILE)
+   ========================================= */
+
+@media (max-width: 600px) {
+  .reaction-grid {
+    gap: 12px;
+  }
+
+  .reaction-item {
+    min-width: 100px;
+    padding: 16px;
+  }
 }
 
 /* =========================================
