@@ -26,13 +26,13 @@
 background:linear-gradient( 180deg, rgb(22, 31, 42) 0%, rgb(23, 32, 43, 0.90) 30%, rgba(23, 32, 43, 0.85) 50%, rgba(23, 32, 43, 0.70) 70%,  rgba(23, 32, 43, 0.50) 90%, rgba(255, 255, 255, 0.30) 100% );
 transition:opacity .6s ease, }
 .darkmode .hero-bg{  -webkit-filter: grayscale(100%);  filter: grayscale(100%) brightness(80%);}
-}
+
 .darkmode .nav-menu{background:linear-gradient(180deg,#17202b,#1f2a38);box-shadow:0 20px 60px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.05)}
 
 
 
 .darkmode .reaction-pro{background:linear-gradient(180deg,#17202b 0%,#1f2a38 100%);border-color:rgba(255,255,255,0.05);box-shadow:0 8px 24px rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.05) inset}.darkmode .reaction-title{color:#e2e8f0}.darkmode .reaction-item{background:#222e3d}.darkmode .reaction-item:hover{background:#2a3b4d;border-color:rgba(255,255,255,0.15);box-shadow:0 12px 28px rgba(0,0,0,0.4)}.darkmode .reaction-item.active{background:#0066cc;border-color:#0066cc;box-shadow:0 12px 28px rgba(0,102,204,0.3),0 0 0 3px rgba(0,102,204,0.2)}.darkmode .reaction-icon{stroke:#a0aab5}.darkmode .reaction-item:hover .reaction-icon{stroke:#4da6ff}.darkmode .reaction-item:not(.active) .reaction-label{color:#a0aab5}.darkmode .reaction-number{background:rgba(255,255,255,0.08);color:#e2e8f0}.darkmode .reaction-item.popular{background:#2a3b4d;box-shadow:0 12px 30px rgba(0,0,0,0.4),0 0 0 2px rgba(255,255,255,0.1)}.darkmode .reaction-item.top-reaction{border-color:#0066cc;box-shadow:0 10px 26px rgba(0,102,204,0.3)}
-
+}
 /* NAVBAR MODERN */
 
 .darkmode .top-wrap-head{background:linear-gradient(135deg,#17202b,#1f2a38);border-bottom-color:rgba(255,255,255,0.05);box-shadow:0 6px 24px rgba(0,0,0,0.3)}.darkmode .top-wrap-head.scrolled{background:rgba(23,32,43,0.9);box-shadow:0 8px 30px rgba(0,0,0,0.4)}.darkmode .submenu{background:rgba(34,46,61,0.95);border-color:rgba(255,255,255,0.1);box-shadow:0 20px 50px rgba(0,0,0,0.5)}.darkmode .submenu li a{color:#dedede}.darkmode .submenu li a:hover{background:linear-gradient(90deg,rgba(0,198,255,0.1),rgba(0,230,255,0.05));color:#00e6ff}.darkmode .nav-menu li a:hover,.darkmode .nav-right i:hover,.darkmode .nav-menu li.active>a{color:#00e6ff}.darkmode .cta-menu-btn{background:linear-gradient(135deg,#00a8d6,#00c6ff);box-shadow:0 8px 24px rgba(0,198,255,0.2)}
