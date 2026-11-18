@@ -269,7 +269,7 @@ body {
   margin-top: 30px;
 }
 
-.btn-primary-white {
+.btn-primary-hero {
   background: #fff;
   color: #004483;
   padding: 12px 28px;
@@ -279,11 +279,11 @@ body {
   transition: 0.3s;
 }
 
-.btn-primary-white:hover {
+.btn-primary-hero:hover {
   transform: translateY(-2px);
 }
 
-.btn-secondary {
+.btn-secondary-hero {
   background: #ff8c00;
   color: white;
   padding: 12px 28px;
@@ -293,7 +293,7 @@ body {
   transition: 0.3s;
 }
 
-.btn-secondary:hover {
+.btn-secondary-hero:hover {
   background: #e67e00;
   color: white;
   transform: translateY(-2px);
@@ -2072,8 +2072,8 @@ body {
     gap: 12px;
   }
 
-  .btn-primary-white,
-  .btn-secondary {
+  .btn-primary-hero,
+  .btn-secondary-hero {
     width: 100%;
     max-width: 260px;
     padding: 14px 20px;
