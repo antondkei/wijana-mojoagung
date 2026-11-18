@@ -269,7 +269,7 @@ body {
   margin-top: 30px;
 }
 
-.btn-primary {
+.btn-primary-white {
   background: #fff;
   color: #004483;
   padding: 12px 28px;
@@ -279,7 +279,7 @@ body {
   transition: 0.3s;
 }
 
-.btn-primary:hover {
+.btn-primary-white:hover {
   transform: translateY(-2px);
 }
 
@@ -2072,7 +2072,7 @@ body {
     gap: 12px;
   }
 
-  .btn-primary,
+  .btn-primary-white,
   .btn-secondary {
     width: 100%;
     max-width: 260px;
