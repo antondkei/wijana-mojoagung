@@ -2058,6 +2058,7 @@
     color: var(--color-text-soft);
     font-size: .84rem;
     line-height: 1.6;
+    list-style: none;
 }
 
 .tuition-page .payment-item li::before {
