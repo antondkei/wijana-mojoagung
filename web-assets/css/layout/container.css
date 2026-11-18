@@ -77,13 +77,70 @@ html {
 /* =========================
    CONTAINER
 ========================= */
-#antonify .antonify-container {
+#wimo .wimo-container {
   max-width: var(--container-xxl); /* Diperbesar dari 1200px agar konten lebih merapat ke tepi */
   margin: 0 auto;
   padding: 0 6%; /* Menggunakan persentase agar dinamis di berbagai layar */
   width: 100%;
 }
 
-#antonify a {
+#wimo a {
   text-decoration: none;
 }
+
+
+  /* ===================================================
+     RESET TOTAL UNTUK LANDING PAGE FULL-WIDTH
+     Menghilangkan seluruh celah antara konten & footer
+     =================================================== */
+  body.wimo-fullwidth .post,
+  body.wimo-fullwidth .hentry,
+  body.wimo-fullwidth #post-wrap,
+  body.wimo-fullwidth #wrapper,
+  body.wimo-fullwidth #content-wrapper,
+  body.wimo-fullwidth .content-wrapper,
+  body.wimo-fullwidth .outer-wrapper,
+  body.wimo-fullwidth #main-wrapper,
+  body.wimo-fullwidth .main .widget,
+  body.wimo-fullwidth .main-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+  }
+
+  /* 1. Hilangkan margin & padding bawah pada area konten utama */
+  body.wimo-fullwidth .post,
+  body.wimo-fullwidth .hentry,
+  body.wimo-fullwidth .post-body,
+  body.wimo-fullwidth .entry-content,
+  body.wimo-fullwidth .main-inner,
+  body.wimo-fullwidth #main,
+  body.wimo-fullwidth .article {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* 2. Hilangkan margin atas pada struktur pembungkus footer */
+  body.wimo-fullwidth #footer-wrapper,
+  body.wimo-fullwidth .footer-wrapper,
+  body.wimo-fullwidth footer,
+  body.wimo-fullwidth #footer {
+    margin-top: 0 !important;
+  }
+
+  /* 3. Sembunyikan elemen bawaan blogger yang sering menyisakan celah kosong */
+  body.wimo-fullwidth #comments,
+  body.wimo-fullwidth .comments,
+  body.wimo-fullwidth .post-footer,
+  body.wimo-fullwidth .post-share-buttons,
+  body.wimo-fullwidth #blog-pager,
+  body.wimo-fullwidth .breadcrumbs {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    visibility: hidden;
+  }
