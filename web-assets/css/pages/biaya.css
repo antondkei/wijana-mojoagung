@@ -13,7 +13,7 @@
 }
 
 .tuition-page .tuition-container {
-    width: min(100% - 12%, var(--container-lg));
+    width: min(100% - 14%, var(--container-lg));
     margin-inline: auto;
 }
 
@@ -740,7 +740,7 @@
 
 .tuition-page .pricing-table th,
 .tuition-page .pricing-table td {
-    padding: 22px 18px;
+    padding: 22px 18px !important;
     vertical-align: middle;
     border-bottom: 1px solid var(--color-border);
     transition: background-color .2s ease;
@@ -843,14 +843,14 @@
 ========================================= */
 
 .tuition-page .pricing-table tbody td {
-    background: var(--color-white);
+    background: var(--color-white) !important;
     color: var(--color-text);
     font-size: var(--fs-small);
     line-height: 1.5;
 }
 
 .tuition-page .pricing-table tbody tr:hover td {
-    background: var(--color-surface);
+    background: var(--color-surface) !important;
 }
 
 /* Column 1: Numbering */
